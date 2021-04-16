@@ -4,7 +4,7 @@
             my-task
         </header>
         <main>
-            <p class="info-line">合計: 0 件</p>
+            <p class="info-line">合計: {{ totalListsInBoard }} 件</p>
             <div class="list-index">
             <list v-for="(item, index) in lists"
                 :key="item.id"
@@ -32,6 +32,9 @@ export default {
         ...mapState([
             'lists'
         ]),
+        totalListsInBoard() {
+            return this.lists.length
+        }
     },
 }
 </script>
