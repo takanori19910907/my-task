@@ -1,11 +1,12 @@
 <template>
-    <div class="list">a
+    <div class="list">
         <div class="listheader">
             <p class="list-title">{{ title }}</p>
             <div class="deletelist" @click="removeList">x</div>
         </div>
     </div>
 </template>
+
 <script>
 export default {
     props: {
@@ -21,7 +22,7 @@ export default {
     methods: {
         removeList: function() {
             if(confirm("本当にこのリストを削除しますか?")){
-                this.$store.dispatch("removelist, { listIndex: this.listIndex}")
+                this.$store.dispatch("removelist", { listIndex: this.listIndex})
             }
         },
     }
