@@ -36,6 +36,9 @@ state: {
       removelist(context, payload) {
         context.commit('removelist', payload)
       },
+      addCardToList(context, payload) {
+        context.commit('addCardToList', payload)
+      },
     },
   // mutations(stateの値を変更する処理)を実行する条件を指定する
   mutations: {
@@ -44,6 +47,9 @@ state: {
     },
     removelist(state, payload) {
       state.lists.splice(payload.listIndex, 1)
+    },
+    addCardToList(state, payload) {
+      state.lists[payload.listIndex].cards.push({body: payload.body})
     },
   },
   // 本来computedとして行う計算処理を定義し、処理を任意の場所で使用できるようにする
