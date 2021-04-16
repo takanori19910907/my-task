@@ -2,13 +2,18 @@
     <div class="list">
         <div class="listheader">
             <p class="list-title">{{ title }}</p>
-            <div class="deletelist" @click="removeList">x</div>
+            <div class="deletelist" @click="removeList">×</div>
         </div>
+        <card-add />
     </div>
 </template>
 
 <script>
+import CardAdd from './CardAdd.vue'
 export default {
+    components: {
+        CardAdd,
+    },
     props: {
         title: {
             type: String,
